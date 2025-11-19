@@ -1,0 +1,22 @@
+USE practice;
+CREATE TABLE IF NOT EXISTS Nakhla
+( 
+DepID INT NOT NULL PRIMARY KEY,
+DepName VARCHAR(50),
+TotalMember INT
+);
+
+SELECT * FROM Nakhla;
+
+INSERT INTO Nakhla
+(DepID,DepName,TotalMember)
+VALUES
+(1,"AL Nakhla",50),
+(2,"Ibn Seena",54);
+
+
+SET AUTOCOMMIT=OFF;
+DELETE FROM Nakhla
+WHERE DepID=1;
+COMMIT;
+ROLLBACK;
